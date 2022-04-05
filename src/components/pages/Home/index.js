@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import data from "mock/data.json";
 
@@ -6,7 +6,31 @@ import * as S from "./style";
 import { Link } from "react-router-dom";
 
 function Home() {
-  const list = data.data.features.map((e) => {
+  const [sort, setSort] = useState();
+
+  const sorted = data.data.features.sort((a, b) => {
+    if (!sort) {
+    } else if (sort === "title") {
+      return a.properties.place === b.properties.place
+        ? 0
+        : a.properties.place > b.properties.place
+        ? -1
+        : 1;
+    } else if (sort === "mag") {
+      return a.properties.mag === b.properties.mag
+        ? 0
+        : a.properties.mag > b.properties.mag
+        ? -1
+        : 1;
+    } else if (sort === "time") {
+      return a.properties.time === b.properties.time
+        ? 0
+        : a.properties.time > b.properties.time
+        ? -1
+        : 1;
+    }
+  });
+  const list = sorted.map((e) => {
     return (
       <tr key={e.id}>
         <td>
@@ -23,9 +47,9 @@ function Home() {
       <table>
         <thead>
           <tr>
-            <td>Title</td>
-            <td>Magnitude</td>
-            <td>Time</td>
+            <td onClick={() => setSort("title")}>Title</td>
+            <td onClick={() => setSort("mag")}>Magnitude</td>
+            <td onClick={() => setSort("time")}> Time</td>
           </tr>
         </thead>
         <tbody>{list}</tbody>
