@@ -6,3 +6,12 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const HeadCell = styled.td`
+  cursor: pointer;
+  text-align: center;
+`;
+
+export const CenteredCell = styled.td`
+  text-align: center;
+`;

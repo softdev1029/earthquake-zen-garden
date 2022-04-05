@@ -31,7 +31,7 @@ function Home() {
         <td>
           <G.Link to={`/detail/${e.id}`}>{e.properties.place}</G.Link>
         </td>
-        <td>{e.properties.mag}</td>
+        <S.CenteredCell>{e.properties.mag}</S.CenteredCell>
         <td>{formatDate(e.properties.time)}</td>
       </tr>
     );
@@ -50,9 +50,9 @@ function Home() {
       <table>
         <thead>
           <tr>
-            <td onClick={() => handleSort("title")}>Title</td>
-            <td onClick={() => handleSort("mag")}>Magnitude</td>
-            <td onClick={() => handleSort("time")}> Time</td>
+            <S.HeadCell onClick={() => handleSort("title")}>Title</S.HeadCell>
+            <S.HeadCell onClick={() => handleSort("mag")}>Magnitude</S.HeadCell>
+            <S.HeadCell onClick={() => handleSort("time")}> Time</S.HeadCell>
           </tr>
         </thead>
         <tbody>{list}</tbody>
