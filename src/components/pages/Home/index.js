@@ -5,29 +5,22 @@ import data from "mock/data.json";
 import * as S from "./style";
 import { Link } from "react-router-dom";
 
+const sortFunc = (a, b, toggle) => {
+  return a === b ? 0 : a > b ? (toggle ? 1 : -1) : toggle ? -1 : 1;
+};
+
 function Home() {
-  const [sort, setSort] = useState();
+  const [sort, setSort] = useState("");
+  const [toggle, setToggle] = useState(false);
 
   const sorted = data.data.features.sort((a, b) => {
     if (!sort) {
     } else if (sort === "title") {
-      return a.properties.place === b.properties.place
-        ? 0
-        : a.properties.place > b.properties.place
-        ? -1
-        : 1;
+      return sortFunc(a.properties.place, b.properties.place, toggle);
     } else if (sort === "mag") {
-      return a.properties.mag === b.properties.mag
-        ? 0
-        : a.properties.mag > b.properties.mag
-        ? -1
-        : 1;
+      return sortFunc(a.properties.mag, b.properties.mag, toggle);
     } else if (sort === "time") {
-      return a.properties.time === b.properties.time
-        ? 0
-        : a.properties.time > b.properties.time
-        ? -1
-        : 1;
+      return sortFunc(a.properties.time, b.properties.time, toggle);
     }
   });
   const list = sorted.map((e) => {
@@ -41,15 +34,23 @@ function Home() {
       </tr>
     );
   });
+
+  const handleSort = (newSort) => {
+    if (sort === newSort) {
+      setToggle(!toggle);
+    }
+    setSort(newSort);
+  };
+
   return (
     <S.Wrapper>
       <h2>USGS All Earthquakes, Past Hour</h2>
       <table>
         <thead>
           <tr>
-            <td onClick={() => setSort("title")}>Title</td>
-            <td onClick={() => setSort("mag")}>Magnitude</td>
-            <td onClick={() => setSort("time")}> Time</td>
+            <td onClick={() => handleSort("title")}>Title</td>
+            <td onClick={() => handleSort("mag")}>Magnitude</td>
+            <td onClick={() => handleSort("time")}> Time</td>
           </tr>
         </thead>
         <tbody>{list}</tbody>
