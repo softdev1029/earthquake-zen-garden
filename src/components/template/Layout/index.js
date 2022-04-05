@@ -11,7 +11,7 @@ const Layout = () => {
       <S.Header>
         <img src={data.site.logoImage} width={60} />
         <S.Title>Earthquake Zen Garden</S.Title>
-        <Link to="/profile">Profile</Link>
+        <S.Link to="/profile">Profile</S.Link>
       </S.Header>
 
       <Outlet />
