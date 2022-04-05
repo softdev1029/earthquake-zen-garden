@@ -1,22 +1,18 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
+import data from "mock/data.json";
+
+import * as S from "./style";
+
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link to="/detail">Detail</Link>
-          </li>
-        </ul>
-      </nav>
+      <S.Header>
+        <img src={data.site.logoImage} width={60} />
+        <S.Title>Earthquake Zen Garden</S.Title>
+        <Link to="/profile">Profile</Link>
+      </S.Header>
 
       <Outlet />
     </>
