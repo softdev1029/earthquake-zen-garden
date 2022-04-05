@@ -8,7 +8,6 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
-
   plugins: [
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
@@ -28,5 +27,11 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, "src/components/"),
+      mock: path.resolve(__dirname, "src/mock/"),
+    },
   },
 };
