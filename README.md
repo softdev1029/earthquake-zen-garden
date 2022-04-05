@@ -47,7 +47,7 @@ nvm use
 
 ### Tech Stack
 
-- I used (`Atomic Design Principles`)[https://atomicdesign.bradfrost.com/chapter-2/] for organizing the components
+- I used [`Atomic Design Principles`](https://atomicdesign.bradfrost.com/chapter-2/) for organizing the components
 
 ```
 components
