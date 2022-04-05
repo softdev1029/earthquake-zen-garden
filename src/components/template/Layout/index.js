@@ -9,7 +9,9 @@ const Layout = () => {
   return (
     <>
       <S.Header>
-        <img src={data.site.logoImage} width={60} />
+        <Link to="/">
+          <img src={data.site.logoImage} width={60} />
+        </Link>
         <S.Title>Earthquake Zen Garden</S.Title>
         <S.Link to="/profile">Profile</S.Link>
       </S.Header>
