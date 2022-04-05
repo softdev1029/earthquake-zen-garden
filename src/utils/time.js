@@ -1,6 +1,5 @@
 export const formatDate = (timestamp) => {
   var options = {
-    weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",

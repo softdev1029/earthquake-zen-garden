@@ -10,7 +10,7 @@ function ProfileView() {
     <S.Wrapper>
       <h2>Profile</h2>
       <S.Body>
-        <img src={profile.avatarImage} width={150} height={180} />
+        <img src={profile.avatarImage} width={150} height={150} />
         <S.Table>
           <tbody>
             <tr>
