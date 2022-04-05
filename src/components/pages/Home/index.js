@@ -3,12 +3,15 @@ import React from "react";
 import data from "mock/data.json";
 
 import * as S from "./style";
+import { Link } from "react-router-dom";
 
 function Home() {
   const list = data.data.features.map((e) => {
     return (
       <tr key={e.id}>
-        <td>{e.properties.place}</td>
+        <td>
+          <Link to={`/detail/${e.id}`}>{e.properties.place}</Link>
+        </td>
         <td>{e.properties.mag}</td>
         <td>{e.properties.time}</td>
       </tr>
