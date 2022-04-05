@@ -6,6 +6,8 @@
 - Run `npm install` // install dependencies
 - Run `npm run start` // auto-start the app, open a browser instance and load the app
 
+![earthquake](https://user-images.githubusercontent.com/43288800/161840795-7db59d0f-1ffd-401a-bd0c-c18c299d4752.gif)
+
 ## Description
 
 ### Set up the project
