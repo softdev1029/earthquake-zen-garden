@@ -12,26 +12,28 @@ function ProfileView() {
       <S.Body>
         <img src={profile.avatarImage} width={150} height={180} />
         <S.Table>
-          <tr>
-            <S.Label>First name</S.Label>
-            <S.Value>{profile.firstName}</S.Value>
-          </tr>
-          <tr>
-            <S.Label>Last name</S.Label>
-            <S.Value>{profile.lastName}</S.Value>
-          </tr>
-          <tr>
-            <S.Label>Phone</S.Label>
-            <S.Value>{profile.phone}</S.Value>
-          </tr>
-          <tr>
-            <S.Label>Email</S.Label>
-            <S.Value>{profile.email}</S.Value>
-          </tr>
-          <tr>
-            <S.Label>Bio</S.Label>
-            <S.Value>{profile.bio}</S.Value>
-          </tr>
+          <tbody>
+            <tr>
+              <S.Label>First name</S.Label>
+              <S.Value>{profile.firstName}</S.Value>
+            </tr>
+            <tr>
+              <S.Label>Last name</S.Label>
+              <S.Value>{profile.lastName}</S.Value>
+            </tr>
+            <tr>
+              <S.Label>Phone</S.Label>
+              <S.Value>{profile.phone}</S.Value>
+            </tr>
+            <tr>
+              <S.Label>Email</S.Label>
+              <S.Value>{profile.email}</S.Value>
+            </tr>
+            <tr>
+              <S.Label>Bio</S.Label>
+              <S.Value>{profile.bio}</S.Value>
+            </tr>
+          </tbody>
         </S.Table>
       </S.Body>
     </S.Wrapper>

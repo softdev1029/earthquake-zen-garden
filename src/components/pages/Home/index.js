@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import data from "mock/data.json";
+import { formatDate } from "utils/time";
 
 import * as S from "./style";
 import * as G from "components/style.js";
@@ -23,6 +24,7 @@ function Home() {
       return sortFunc(a.properties.time, b.properties.time, toggle);
     }
   });
+
   const list = sorted.map((e) => {
     return (
       <tr key={e.id}>
@@ -30,7 +32,7 @@ function Home() {
           <G.Link to={`/detail/${e.id}`}>{e.properties.place}</G.Link>
         </td>
         <td>{e.properties.mag}</td>
-        <td>{e.properties.time}</td>
+        <td>{formatDate(e.properties.time)}</td>
       </tr>
     );
   });

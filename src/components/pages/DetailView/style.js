@@ -15,7 +15,9 @@ export const Body = styled.table`
 
 export const Row = styled.tr``;
 
-export const Label = styled.h3``;
+export const Label = styled.td`
+  font-weight: bold;
+`;
 
 export const Value = styled.td`
   margin-left: 20px;

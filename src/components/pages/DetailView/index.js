@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import data from "mock/data.json";
+import { formatDate } from "utils/time";
 
 import * as S from "./style";
 
@@ -23,7 +24,7 @@ function DetailView() {
           </S.Row>
           <S.Row>
             <S.Label>Time</S.Label>
-            <S.Value>{item.properties.time}</S.Value>
+            <S.Value>{formatDate(item.properties.time)}</S.Value>
           </S.Row>
           <S.Row>
             <S.Label>Status</S.Label>
