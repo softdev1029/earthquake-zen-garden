@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import data from "mock/data.json";
 
 import * as S from "./style";
-import { Link } from "react-router-dom";
+import * as G from "components/style.js";
 
 const sortFunc = (a, b, toggle) => {
   return a === b ? 0 : a > b ? (toggle ? 1 : -1) : toggle ? -1 : 1;
@@ -27,7 +27,7 @@ function Home() {
     return (
       <tr key={e.id}>
         <td>
-          <Link to={`/detail/${e.id}`}>{e.properties.place}</Link>
+          <G.Link to={`/detail/${e.id}`}>{e.properties.place}</G.Link>
         </td>
         <td>{e.properties.mag}</td>
         <td>{e.properties.time}</td>

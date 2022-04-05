@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link as BaseLink } from "react-router-dom";
+
 export const Header = styled.div`
   display: flex;
   align-items: center;
@@ -11,7 +11,3 @@ export const Header = styled.div`
 export const Logo = styled.img``;
 
 export const Title = styled.h1``;
-
-export const Link = styled(BaseLink)`
-  color: var(--purple);
-`;
